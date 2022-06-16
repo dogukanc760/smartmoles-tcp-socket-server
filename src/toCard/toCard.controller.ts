@@ -36,6 +36,6 @@ export class ToCardController {
     // })();
     this.logger.verbose('Incoming message: ' + message);
     //console.log('Incoming Connect:' + message);
-    return `You have connected to this card: ${message}`;
+    return `You have connected  to this card: ${message}`;
   }
 }

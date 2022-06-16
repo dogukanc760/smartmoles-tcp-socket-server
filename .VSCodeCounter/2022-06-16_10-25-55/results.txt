@@ -1,0 +1,48 @@
+Date : 2022-06-16 10:25:55
+Directory : c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service
+Total : 17 files,  18453 codes, 25 comments, 57 blanks, all 18535 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |          6 |     18,236 |          8 |          3 |     18,247 |
+| TypeScript         |          8 |        126 |         15 |         31 |        172 |
+| Markdown           |          1 |         51 |          2 |         21 |         74 |
+| JavaScript         |          1 |         24 |          0 |          1 |         25 |
+| JSON with Comments |          1 |         16 |          0 |          1 |         17 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                    | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                       |         17 |     18,453 |         25 |         57 |     18,535 |
+| src                                                                                                     |          7 |        106 |         15 |         26 |        147 |
+| src\toCard                                                                                              |          2 |         41 |         15 |         12 |         68 |
+| test                                                                                                    |          2 |         29 |          0 |          6 |         35 |
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                                                | language           | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\.eslintrc.js                    | JavaScript         |         24 |          0 |          1 |         25 |
+| c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\.prettierrc                     | JSON               |          4 |          0 |          0 |          4 |
+| c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\README.md                       | Markdown           |         51 |          2 |         21 |         74 |
+| c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\nest-cli.json                   | JSON               |          4 |          0 |          1 |          5 |
+| c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\package-lock.json               | JSON               |     18,148 |          0 |          1 |     18,149 |
+| c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\package.json                    | JSON               |         68 |          6 |          0 |         74 |
+| c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\src\app.controller.spec.ts      | TypeScript         |         18 |          0 |          5 |         23 |
+| c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\src\app.controller.ts           | TypeScript         |         13 |          0 |          3 |         16 |
+| c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\src\app.module.ts               | TypeScript         |         10 |          0 |          2 |         12 |
+| c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\src\app.service.ts              | TypeScript         |          7 |          0 |          2 |          9 |
+| c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\src\main.ts                     | TypeScript         |         17 |          0 |          2 |         19 |
+| c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\src\toCard\toCard.controller.ts | TypeScript         |         19 |         15 |          8 |         42 |
+| c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\src\toCard\toCard.module.ts     | TypeScript         |         22 |          0 |          4 |         26 |
+| c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\test\app.e2e-spec.ts            | TypeScript         |         20 |          0 |          5 |         25 |
+| c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\test\jest-e2e.json              | JSON               |          9 |          0 |          1 |         10 |
+| c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\tsconfig.build.json             | JSON               |          3 |          2 |          0 |          5 |
+| c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\tsconfig.json                   | JSON with Comments |         16 |          0 |          1 |         17 |
+| Total                                                                                                   |                    |     18,453 |         25 |         57 |     18,535 |
++---------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

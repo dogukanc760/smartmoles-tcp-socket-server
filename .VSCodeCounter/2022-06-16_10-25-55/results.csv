@@ -1,0 +1,19 @@
+"filename", "language", "JSON", "JavaScript", "JSON with Comments", "TypeScript", "Markdown", "comment", "blank", "total"
+"c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\.eslintrc.js", "JavaScript", 0, 24, 0, 0, 0, 0, 1, 25
+"c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\.prettierrc", "JSON", 4, 0, 0, 0, 0, 0, 0, 4
+"c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\README.md", "Markdown", 0, 0, 0, 0, 51, 2, 21, 74
+"c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\nest-cli.json", "JSON", 4, 0, 0, 0, 0, 0, 1, 5
+"c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\package-lock.json", "JSON", 18148, 0, 0, 0, 0, 0, 1, 18149
+"c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\package.json", "JSON", 68, 0, 0, 0, 0, 6, 0, 74
+"c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\src\app.controller.spec.ts", "TypeScript", 0, 0, 0, 18, 0, 0, 5, 23
+"c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\src\app.controller.ts", "TypeScript", 0, 0, 0, 13, 0, 0, 3, 16
+"c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\src\app.module.ts", "TypeScript", 0, 0, 0, 10, 0, 0, 2, 12
+"c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\src\app.service.ts", "TypeScript", 0, 0, 0, 7, 0, 0, 2, 9
+"c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\src\main.ts", "TypeScript", 0, 0, 0, 17, 0, 0, 2, 19
+"c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\src\toCard\toCard.controller.ts", "TypeScript", 0, 0, 0, 19, 0, 15, 8, 42
+"c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\src\toCard\toCard.module.ts", "TypeScript", 0, 0, 0, 22, 0, 0, 4, 26
+"c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\test\app.e2e-spec.ts", "TypeScript", 0, 0, 0, 20, 0, 0, 5, 25
+"c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\test\jest-e2e.json", "JSON", 9, 0, 0, 0, 0, 0, 1, 10
+"c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\tsconfig.build.json", "JSON", 3, 0, 0, 0, 0, 2, 0, 5
+"c:\Users\Dodo\Desktop\nestjs-microservices-demo-master\greeting-service\tsconfig.json", "JSON with Comments", 0, 0, 16, 0, 0, 0, 1, 17
+"Total", "-", 18236, 24, 16, 126, 51, 25, 57, 18535

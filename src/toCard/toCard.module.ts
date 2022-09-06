@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { SendDataController } from './sendData.controller';
 import { ToCardController } from './toCard.controller';
 
 
@@ -20,6 +21,6 @@ import { ToCardController } from './toCard.controller';
       },
     ]),
   ],
-  controllers: [ToCardController],
+  controllers: [ToCardController, SendDataController],
 })
 export class ToCardModule {}

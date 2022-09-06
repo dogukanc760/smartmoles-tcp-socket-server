@@ -1,6 +1,9 @@
 import { Controller, Get, Inject, Logger } from '@nestjs/common';
 import { ClientProxy, ClientTCP, MessagePattern } from '@nestjs/microservices';
+import { exec } from 'child_process';
 import { Observable } from 'rxjs';
+import { cli } from 'winston/lib/winston/config';
+import * as net from 'net';
 
 @Controller()
 export class ToCardController {
@@ -15,27 +18,35 @@ export class ToCardController {
     return this.client.send<number>(pattern, data);
   }
 
-  @MessagePattern({ cmd: 'connect-card' })
-  getGreetingMessage(message: string): string {
-    // (async () => {
-    //   const client = new ClientTCP({
-    //     host: '188.38.15.71',
-    //     port: 2000,
-    //   });
+  @MessagePattern({ cmd: 'send-to-card' })
+  async getGreetingMessage(message: string): Promise<any> {
+    try {
+      const client = new net.Socket();
+      const conn = client.connect(2000, '5.26.66.66');
 
-    //   await client.connect();
+      const pattern = { cmd: 'connect-card' };
 
-    //   const pattern = { cmd: 'connect-card' };
-    //   const data = '[2, 3, 4, 5]';
+      const sleep = (m) => new Promise((r) => setTimeout(r, m));
 
-    //   const result = await client
-    //     .send(pattern, data)
-    //     .toPromise()
-    //     .then((x) => console.log(x))
-    //     .catch((err) => console.log(err));
-    // })();
-    this.logger.verbose('Incoming message: ' + message);
-    //console.log('Incoming Connect:' + message);
-    return `You have connected  to this card: ${message}`;
+      this.logger.verbose(`Incoming data is: ${message}`);
+
+      setTimeout(async () => {
+        conn.write(message);
+        console.log('Data Gönderimi baaşladı');
+        console.log('data gönderimi bitti');
+        conn.end();
+        return `Your data is: ${message}`;
+      }, 15000);
+    } catch (error) {
+      console.log(error);
+      //exec('npm run start:dev');
+      return error;
+    }
+  }
+
+  //from card
+  @MessagePattern({ cmd: '' })
+  async connectRealCard(messageTo: string[]) {
+    return `You have connected  to this card: ${messageTo}`;
   }
 }

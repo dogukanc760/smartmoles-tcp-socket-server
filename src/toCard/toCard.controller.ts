@@ -4,6 +4,7 @@ import { exec } from 'child_process';
 import { Observable } from 'rxjs';
 import { cli } from 'winston/lib/winston/config';
 import * as net from 'net';
+import { connect } from 'http2';
 
 @Controller()
 export class ToCardController {
@@ -18,25 +19,34 @@ export class ToCardController {
     return this.client.send<number>(pattern, data);
   }
 
+  public unicodeToChar(text) {
+    return text.replace(/\\u[\dA-F]{4}/gi, function (match) {
+      return String.fromCharCode(parseInt(match.replace(/\\u/g, ''), 16));
+    });
+  }
+
   @MessagePattern({ cmd: 'send-to-card' })
   async getGreetingMessage(message: string): Promise<any> {
     try {
       const client = new net.Socket();
       const conn = client.connect(2000, '5.26.66.66');
 
-      const pattern = { cmd: 'connect-card' };
-
-      const sleep = (m) => new Promise((r) => setTimeout(r, m));
-
       this.logger.verbose(`Incoming data is: ${message}`);
-
-      setTimeout(async () => {
-        conn.write(message);
-        console.log('Data Gönderimi baaşladı');
-        console.log('data gönderimi bitti');
-        conn.end();
-        return `Your data is: ${message}`;
-      }, 15000);
+      var resCon = '';
+      conn.on('data', (data) => {
+        data.forEach((data) => {
+          if (resCon === 'READY') {
+            resCon = '';
+          } else {
+            this.logger.warn(`Else içi:${String.fromCharCode(data)}`);
+          }
+          resCon += String.fromCharCode(data);
+        });
+        this.getReadyMessage(resCon, conn, message)
+          ? this.logger.verbose('Kart veri göndermeye hazır!')
+          : this.logger.error('Kart veri göndermeye hazır değil!');
+      });
+      conn.on('error', (err: Error) => this.logger.error(`Veri göndermeye çalışırken bir hata oluştu=>${err}`));
     } catch (error) {
       console.log(error);
       //exec('npm run start:dev');
@@ -44,6 +54,20 @@ export class ToCardController {
     }
   }
 
+  public getReadyMessage(
+    resCon: string,
+    server: net.Socket,
+    message: any,
+  ): boolean {
+    if (resCon === 'READY') {
+      this.logger.verbose(`Card is ready`);
+      server.write(message);
+      return true;
+    }
+    this.logger.verbose(`Last Rescon: ${resCon}`);
+    this.logger.verbose(`Card is not ready`);
+    return false;
+  }
   //from card
   @MessagePattern({ cmd: '' })
   async connectRealCard(messageTo: string[]) {

@@ -30,7 +30,7 @@ export class ToCardController {
     try {
       const client = new net.Socket();
       const conn = client.connect(2000, '5.26.66.66');
-
+      //const conn = client.connect(2000, '188.38.151.115');
       this.logger.verbose(`Incoming data is: ${message}`);
       var resCon = '';
       conn.on('data', (data) => {
@@ -38,7 +38,9 @@ export class ToCardController {
           if (resCon === 'READY') {
             resCon = '';
           } else {
-            this.logger.warn(`Else içi:${String.fromCharCode(data)}`);
+            this.logger.warn(`Else içi:${data}`);
+            console.log('resconConsole:', resCon);
+            this.logger.error(`Nem okuma:${decodeURIComponent(resCon)}`)
           }
           resCon += String.fromCharCode(data);
         });
@@ -46,7 +48,9 @@ export class ToCardController {
           ? this.logger.verbose('Kart veri göndermeye hazır!')
           : this.logger.error('Kart veri göndermeye hazır değil!');
       });
-      conn.on('error', (err: Error) => this.logger.error(`Veri göndermeye çalışırken bir hata oluştu=>${err}`));
+      conn.on('error', (err: Error) =>
+        this.logger.error(`Veri göndermeye çalışırken bir hata oluştu=>${err}`),
+      );
     } catch (error) {
       console.log(error);
       //exec('npm run start:dev');
@@ -65,6 +69,7 @@ export class ToCardController {
       return true;
     }
     this.logger.verbose(`Last Rescon: ${resCon}`);
+    console.log('lConsole:', resCon);
     this.logger.verbose(`Card is not ready`);
     return false;
   }
